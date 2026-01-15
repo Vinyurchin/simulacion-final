@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     ".onrender.com",  # Permite cualquier subdominio de Render
+    ".herokuapp.com",  # Permite cualquier subdominio de Heroku
 ]
 
 if os.environ.get('RENDER_EXTERNAL_HOSTNAME'):
