@@ -1,0 +1,188 @@
+/* ===============================
+   VARIABLES GLOBALES
+   =============================== */
+:root {
+    --bg-color: #f5fef5;
+    --text-color: #2d5a2d;
+    --accent-color: #6ba86b;
+    --accent-light: #9ecf9e;
+    --accent-dark: #4a8c4a;
+    --glass-bg: rgba(107, 168, 107, 0.08);
+    --glass-border: rgba(107, 168, 107, 0.2);
+    --title-size: clamp(20px, 5vw + 1rem, 56px);
+    --subtitle-size: clamp(1rem, 2.5vw + 0.5rem, 2rem);
+    --border-gradient: linear-gradient(135deg, #6ba86b, #9ecf9e);
+}
+
+/* ===============================
+   ESTILOS GENERALES
+   =============================== */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* ===============================
+   TITULOS
+   =============================== */
+h1 {
+    font-size: var(--title-size);
+    text-align: center;
+    color: var(--accent-dark);
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: var(--subtitle-size);
+    text-align: center;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* ===============================
+   TABLAS
+   =============================== */
+.table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid var(--accent-light);
+    box-shadow: 0 2px 8px rgba(107, 168, 107, 0.08);
+    margin: 0 auto 2rem auto;
+}
+
+.table th {
+    padding: 12px 16px;
+    background: var(--accent-color);
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+.table td {
+    padding: 10px 14px;
+    text-align: center;
+    border-bottom: 1px solid rgba(107, 168, 107, 0.2);
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* Hover en filas */
+.table tr:hover td {
+    background: rgba(107, 168, 107, 0.08);
+}
+
+/* ===============================
+   IMAGEN MATRIZ DE CONFUSIÓN
+   =============================== */
+#confusion-img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 12px rgba(107, 168, 107, 0.15);
+}
+
+/* ===============================
+   BOTÓN REGRESO
+   =============================== */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 28px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: var(--accent-dark);
+    background: #ffffff;
+    border: 1.5px solid var(--accent-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 auto 2rem auto;
+    box-shadow: 0 2px 6px rgba(107, 168, 107, 0.1);
+}
+
+.btn-back:hover {
+    background: linear-gradient(135deg, #ffffff, #eef9ef);
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 12px rgba(107, 168, 107, 0.15);
+    transform: translateY(-2px);
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 900px) {
+    .table { min-width: 500px; }
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: clamp(18px, 6vw, 40px); }
+    h2 { font-size: clamp(1rem, 4vw, 1.5rem); }
+    .table th, .table td { padding: 8px 10px; }
+    #confusion-img { max-width: 90%; }
+    .btn-back { padding: 10px 20px; }
+}
+
+/* ===============================
+   PROGRESO DE EVALUACIÓN
+   =============================== */
+.progress-section {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.progress-container {
+    width: 100%;
+    max-width: 700px;
+    height: 16px;
+    margin: 0 auto;
+    background: rgba(107, 168, 107, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--accent-color);
+    transition: width 0.4s ease;
+}
+
+.progress-text {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+

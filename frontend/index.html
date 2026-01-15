@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>RegresionLogistica</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- HERO PRINCIPAL -->
+    <section class="hero">
+      <h1 class="glass hero-title">🌱 Explorador de Datos ML</h1>
+      <p class="hero-subtitle">Carga, analiza y entrena modelos de regresión logística con facilidad</p>
+    </section>
+
+    <!-- SECCIÓN DE SUBIDA DE DATASET -->
+    <section class="upload">
+      <label class="upload-box big-upload">
+        <input type="file" id="DataSetInput" accept=".csv, .txt, .json" />
+        <i class="fa-solid fa-file-upload fa-3x" style="color: #6ba86b;"></i>
+        <span class="upload-text">Carga tu Dataset</span>
+        <small>Formatos: CSV, TXT, JSON</small>
+      </label>
+
+      <!-- ESTADO DEL DATASET -->
+      <div class="dataset-status-container">
+        <!-- Estado dinámico -->
+        <p id="uploadStatus" class="status-placeholder">Carga un dataset para comenzar</p>
+
+        <!-- Indicador visual (solo se muestra si hay dataset) -->
+        <div id="datasetIndicator" class="status-badge hidden">
+          <i class="fa-solid fa-circle-check"></i> Listo para procesar
+        </div>
+
+        <!-- Botón reset -->
+        <button id="resetDataset" class="btn-back hidden">↻ Resetear Dataset</button>
+      </div>
+    </section>
+
+    <!-- MENÚ PRINCIPAL -->
+    <section class="menu big-menu">
+      <a href="visualizacion.html" class="menu-btn" data-requiere-dataset>
+        <i class="fa-solid fa-chart-pie"></i>
+        <span>Visualización</span>
+      </a>
+      <a href="division_data.html" class="menu-btn" data-requiere-dataset>
+        <i class="fa-solid fa-split"></i>
+        <span>División</span>
+      </a>
+      <a href="prep_Data.html" class="menu-btn" data-requiere-dataset>
+        <i class="fa-solid fa-sliders"></i>
+        <span>Preparación</span>
+      </a>
+      <a href="pipelinesPersonalizados.html" class="menu-btn" data-requiere-dataset>
+        <i class="fa-solid fa-sitemap"></i>
+        <span>Pipelines</span>
+      </a>
+      <a href="eval_model.html" class="menu-btn" data-requiere-dataset>
+        <i class="fa-solid fa-microscope"></i>
+        <span>Evaluación</span>
+      </a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      © 2026 — Explorador de Datos ML | Desarrollado por Diego López
+    </footer>
+
+    <script src="js/config.js" defer></script>
+    <script src="js/cargar_archivo.js" defer></script>
+  </body>
+</html>
