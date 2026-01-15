@@ -73,7 +73,7 @@ CORS_ALLOWED_ORIGINS = [
 
 # Agrega tu URL de frontend de producción cuando la tengas
 FRONTEND_URL = os.environ.get('FRONTEND_URL', 'http://localhost:5000')
-if FRONTEND_URL not in CORS_ALLOWED_ORIGINS:
+if FRONTEND_URL and FRONTEND_URL not in CORS_ALLOWED_ORIGINS:
     CORS_ALLOWED_ORIGINS.append(FRONTEND_URL)
 
 # En desarrollo, permite todos los orígenes (cuidado en producción)
