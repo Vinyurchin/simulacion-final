@@ -72,6 +72,9 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:5000',
 ]
 
+# Permite cualquier dominio de Vercel (producción) via regex
+CORS_ALLOWED_ORIGIN_REGEXES = [r"^https://.*\.vercel\.app$"]
+
 # Agrega tu URL de frontend de producción cuando la tengas
 FRONTEND_URL = os.environ.get('FRONTEND_URL', 'http://localhost:5000')
 if FRONTEND_URL and FRONTEND_URL not in CORS_ALLOWED_ORIGINS:
